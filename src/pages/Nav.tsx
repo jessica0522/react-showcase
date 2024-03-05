@@ -9,7 +9,7 @@ const Nav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 border-b border-slate-200 hover:border-b-2">
+    <header className="z-50 border-b border-slate-200 hover:border-b-2">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -42,7 +42,7 @@ const Nav = () => {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            to="/"
+            to="/login"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Log in <span aria-hidden="true">&rarr;</span>
