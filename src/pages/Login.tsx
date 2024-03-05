@@ -1,11 +1,20 @@
 import React, { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSignIn = () => {
+
+  const handleSignIn = async () => {
     if (email && password) {
       console.log("email", email);
+      await signInWithEmailAndPassword(getAuth(), email, password);
+      navigate("/posts");
+    } else {
+      console.log("error");
     }
   };
 
@@ -41,6 +50,7 @@ const Login = () => {
         >
           Log In
         </button>
+        <Link to="/posts">Posts</Link>
       </div>
     </div>
   );
