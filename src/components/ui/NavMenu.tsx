@@ -4,17 +4,22 @@ import { NavigationLink } from "../../components";
 
 interface NavMenuProps {
   menuItems: MenuItem[];
-  customisedLinkClass?: string;
+  isMobile?: boolean;
+  onClick?: () => void;
 }
 
-const NavMenu = ({ menuItems, customisedLinkClass }: NavMenuProps) => {
+const mobileClassName =
+  "-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900";
+
+const NavMenu = ({ menuItems, isMobile, onClick }: NavMenuProps) => {
   return (
     <>
       {menuItems.map((item: MenuItem) => (
         <NavigationLink
           key={item.name}
           to={item.to}
-          className={customisedLinkClass}
+          className={isMobile ? mobileClassName : ""}
+          onClick={isMobile ? onClick : undefined}
         >
           {item.name}
         </NavigationLink>
