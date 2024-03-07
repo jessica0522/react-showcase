@@ -4,8 +4,12 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Posts from "./pages/Posts";
+import useAuth from "./hooks/useAuth";
 
 const App: React.FC = () => {
+  // get authorization info globally
+  useAuth();
+
   return (
     <Router>
       <Layout>
