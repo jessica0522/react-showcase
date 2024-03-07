@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../../hooks/useAuth";
 import { TextInput, StandardButton } from "../../components";
 
-type Props = {};
-
-const SignInForm = (props: Props) => {
+const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSignIn = async () => {
     if (email && password) {
-      console.log("email", email);
-      await signInWithEmailAndPassword(getAuth(), email, password);
+      await signIn(email, password);
       navigate("/posts");
     } else {
       console.log("error");
@@ -21,7 +18,7 @@ const SignInForm = (props: Props) => {
   };
 
   return (
-    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm space-y-6">
+    <div className="space-y-6">
       <TextInput
         label="Email"
         type="text"
