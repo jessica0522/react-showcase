@@ -1,9 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Posts from "./pages/Posts";
+import { Home, Layout, Login, Posts, User } from "./pages";
 import useAuth from "./hooks/useAuth";
 
 const App: React.FC = () => {
@@ -17,6 +14,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/user" element={<User />} />
         </Routes>
       </Layout>
     </Router>

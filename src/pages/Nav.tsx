@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../state/selectors";
 
 import { menus } from "../static/menus";
 import {
@@ -6,10 +9,13 @@ import {
   NavMenu,
   HamburgerButton,
   NavMobile,
+  UserAvatar,
 } from "../components";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const user = useSelector(selectUser);
 
   return (
     <header className="z-50 border-b border-slate-200 hover:border-b-2">
@@ -29,9 +35,13 @@ const Nav = () => {
           <NavMenu menuItems={menus} />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <NavigationLink to="/login">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </NavigationLink>
+          {user.email ? (
+            <UserAvatar onClick={() => navigate("/user")} />
+          ) : (
+            <NavigationLink to="/login">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </NavigationLink>
+          )}
         </div>
       </nav>
       <NavMobile

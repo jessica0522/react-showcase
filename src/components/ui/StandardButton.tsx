@@ -14,7 +14,7 @@ const StandardButton = ({
   return (
     <button
       onClick={onClick}
-      className={`p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 ${additionalClass}`}
+      className={`p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 ${additionalClass}`}
     >
       {children}
     </button>
