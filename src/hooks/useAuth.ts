@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { User, setUser } from "../state/authState/authSlice";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -25,13 +21,4 @@ const useAuth = () => {
   }, [dispatch]);
 };
 
-const signIn = async (email: string, password: string) => {
-  try {
-    await signInWithEmailAndPassword(getAuth(), email, password);
-  } catch (error) {
-    console.log("error", error);
-  }
-};
-
 export default useAuth;
-export { signIn };
