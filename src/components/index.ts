@@ -1,4 +1,5 @@
 import SignInForm from "./features/SignInForm/SignInForm";
+import RegisterForm from "./features/RegisterForm/RegisterForm";
 
 import HamburgerButton from "./ui/HamburgerButton";
 import CloseButton from "./ui/CloseButton";
@@ -12,6 +13,7 @@ import FullPageLoading from "./ui/FullPageLoading";
 
 export {
   SignInForm,
+  RegisterForm,
   HamburgerButton,
   UserAvatar,
   CloseButton,

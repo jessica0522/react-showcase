@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Home, Layout, Login, Posts, User } from "./pages";
+import { Home, Layout, Login, Register, Posts, User } from "./pages";
 import useAuth from "./hooks/useAuth";
 
 const App: React.FC = () => {
@@ -12,6 +12,7 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/user" element={<User />} />
