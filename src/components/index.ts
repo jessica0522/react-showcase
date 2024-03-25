@@ -8,6 +8,7 @@ import NavigationLink from "./ui/NavigationLink";
 import NavMobile from "./ui/NavMobile";
 import NavMenu from "./ui/NavMenu";
 import TextInput from "./ui/TextInput";
+import FullPageLoading from "./ui/FullPageLoading";
 
 export {
   SignInForm,
@@ -19,4 +20,5 @@ export {
   NavMobile,
   NavMenu,
   TextInput,
+  FullPageLoading,
 };
