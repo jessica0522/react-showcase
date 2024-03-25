@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../state/selectors";
 import { menus } from "../../static/menus";
-import { CloseButton, NavMenu, NavigationLink } from "..";
+import { CloseButton, NavMenu, NavigationLink, UserAvatar } from "..";
 
 interface NavMobileProps {
   open: boolean;
@@ -9,6 +12,13 @@ interface NavMobileProps {
 }
 
 const NavMobile = ({ open, onClose }: NavMobileProps) => {
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  const goToUserPage = () => {
+    onClose();
+    navigate("/user");
+  };
+
   return (
     <Dialog as="div" className="lg:hidden" open={open} onClose={onClose}>
       <div className="fixed inset-0 z-50" />
@@ -25,13 +35,17 @@ const NavMobile = ({ open, onClose }: NavMobileProps) => {
               <NavMenu menuItems={menus} isMobile onClick={onClose} />
             </div>
             <div className="py-6">
-              <NavigationLink
-                to="/login"
-                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900"
-                onClick={onClose}
-              >
-                Log in
-              </NavigationLink>
+              {user.email ? (
+                <UserAvatar onClick={goToUserPage} />
+              ) : (
+                <NavigationLink
+                  to="/login"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900"
+                  onClick={onClose}
+                >
+                  Log in <span aria-hidden="true">&rarr;</span>
+                </NavigationLink>
+              )}
             </div>
           </div>
         </div>

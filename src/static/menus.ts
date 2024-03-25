@@ -4,7 +4,7 @@ interface MenuItem {
 }
 const menus: MenuItem[] = [
   { name: "Home", to: "/" },
-  { name: "Posts", to: "/" },
+  { name: "Posts", to: "/posts" },
   { name: "Database", to: "/" },
 ];
 
