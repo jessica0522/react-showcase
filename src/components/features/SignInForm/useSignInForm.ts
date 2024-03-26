@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../../../state/mainState/mainSlice";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { Error } from "../../../interfaces";
+import { Error } from "../../../static/interfaces";
 
 const useSignInForm = () => {
   const dispatch = useDispatch();
