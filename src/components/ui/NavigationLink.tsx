@@ -17,7 +17,7 @@ const NavigationLink = (props: NavigationLinkProps) => {
       key={key}
       to={to}
       onClick={onClick}
-      className={className || "text-sm font-semibold leading-6 text-gray-900"}
+      className={className || "text-base font-semibold leading-6 text-gray-900"}
     >
       {children}
     </Link>

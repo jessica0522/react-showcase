@@ -13,7 +13,7 @@ const UserAvatar = ({ onClick }: UserAvatarProps) => {
       onClick={onClick}
     >
       <span className="sr-only">Open main menu</span>
-      <UserCircleIcon className="h-6 w-6" aria-hidden="true" />
+      <UserCircleIcon className="h-8 w-8" aria-hidden="true" />
     </button>
   );
 };
