@@ -1,12 +1,11 @@
 import React from "react";
-import { NavigationLink, UserAvatar } from "../index";
-import { Post } from "../../static/interfaces";
+import { NavigationLink, UserAvatar } from "../../index";
+import { Post } from "../../../static/interfaces";
+import usePostList from "./usePostList";
 
-interface PostListsProps {
-  posts: Post[];
-}
+function PostLists() {
+  const { posts } = usePostList();
 
-function PostLists({ posts }: PostListsProps) {
   return (
     <>
       {posts.map((post: Post) => (
@@ -20,7 +19,7 @@ function PostLists({ posts }: PostListsProps) {
             </div>
             <div className="flex items-center gap-x-4 text-xs mt-6">
               <time dateTime={post.datetime} className="text-gray-500">
-                {post.date}
+                {new Date(post.datetime).toLocaleString()}
               </time>
               <p className="relative z-10 rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 capitalize">
                 {post.category}
@@ -31,7 +30,7 @@ function PostLists({ posts }: PostListsProps) {
                 {post.title}
               </h3>
               <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                {post.description}
+                {post.content[0]}
               </p>
             </div>
             <div className="relative mt-8 flex items-center gap-x-4">

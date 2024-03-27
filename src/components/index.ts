@@ -1,5 +1,6 @@
 import SignInForm from "./features/SignInForm/SignInForm";
 import RegisterForm from "./features/RegisterForm/RegisterForm";
+import PostLists from "./features/PostLists/PostLists";
 
 import HamburgerButton from "./ui/HamburgerButton";
 import CloseButton from "./ui/CloseButton";
@@ -10,7 +11,6 @@ import NavMobile from "./ui/NavMobile";
 import NavMenu from "./ui/NavMenu";
 import TextInput from "./ui/TextInput";
 import FullPageLoading from "./ui/FullPageLoading";
-import PostLists from "./ui/PostLists";
 
 export {
   SignInForm,

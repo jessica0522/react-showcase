@@ -22,8 +22,7 @@ export interface PostAuthor {
 export interface Post {
   id: string;
   title: string;
-  description: string;
-  date: string;
+  content: string[];
   datetime: string;
   category: Category;
   author: PostAuthor;

@@ -1,47 +1,5 @@
 import React from "react";
-import { Category, Post } from "../static/interfaces";
 import { PostLists } from "../components";
-
-const posts: Post[] = [
-  {
-    id: "post1",
-    title: "Boost your conversion rate",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    category: Category.Animal,
-    author: {
-      email: "Michael Foster",
-      role: "Co-Founder / CTO",
-    },
-  },
-  {
-    id: "post2",
-    title: "Boost your conversion rate",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    category: Category.Free,
-    author: {
-      email: "Michael Foster",
-      role: "Co-Founder / CTO",
-    },
-  },
-  {
-    id: "post3",
-    title: "Boost your conversion rate",
-    description:
-      "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    category: Category.Nature,
-    author: {
-      email: "Michael Foster",
-    },
-  },
-];
 
 const Posts = () => {
   return (
@@ -57,7 +15,7 @@ const Posts = () => {
             </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <PostLists posts={posts} />
+            <PostLists />
           </div>
         </div>
       </div>
