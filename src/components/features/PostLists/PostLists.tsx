@@ -9,7 +9,7 @@ function PostLists() {
   return (
     <>
       {posts.map((post: Post) => (
-        <NavigationLink to="/posts">
+        <NavigationLink to={`/posts/${post.id}`}>
           <article
             key={post.id}
             className="flex max-w-xl flex-col items-start justify-between"
