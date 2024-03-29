@@ -1,7 +1,9 @@
 import React from "react";
-import { PostLists } from "../components";
+import { NavigationLink, PostLists, StandardButton } from "../components";
+import usePostList from "../components/features/PostLists/usePostList";
 
 const Posts = () => {
+  const { user, navigate } = usePostList();
   return (
     <>
       <div className="bg-white py-24 sm:py-32">
@@ -10,9 +12,32 @@ const Posts = () => {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Blogs
             </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              You can add your own blog after signing in.
-            </p>
+            {user.email ? (
+              <>
+                <p className="mt-2 text-lg leading-8 text-gray-600">
+                  Here are some posts examples. You can add your own one. Try it
+                  now!
+                </p>
+                <div className="mt-4">
+                  <StandardButton onClick={() => navigate("/posts/add-new")}>
+                    Add your post
+                  </StandardButton>
+                </div>
+              </>
+            ) : (
+              <p className="mt-2 text-lg leading-8 text-gray-600">
+                You can add your own blog after{" "}
+                <span>
+                  <NavigationLink
+                    to="/login"
+                    className="underline text-blue-500 font-semibold"
+                  >
+                    Signing in
+                  </NavigationLink>
+                </span>
+                .
+              </p>
+            )}
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             <PostLists />

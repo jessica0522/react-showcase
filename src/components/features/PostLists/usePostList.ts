@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { selectUser } from "../../../state/selectors";
 import { setLoading } from "../../../state/mainState/mainSlice";
 import axios from "axios";
 
 const usePostList = () => {
   const dispatch = useDispatch();
   const [posts, setPosts] = useState([]);
+  const user = useSelector(selectUser);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -25,7 +29,7 @@ const usePostList = () => {
     fetchPosts();
   }, [dispatch]);
 
-  return { posts };
+  return { posts, user, navigate };
 };
 
 export default usePostList;
