@@ -1,6 +1,15 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Home, Layout, Login, Register, Posts, User, PostItem } from "./pages";
+import {
+  Home,
+  Layout,
+  Login,
+  Register,
+  Posts,
+  User,
+  PostItem,
+  Page404,
+} from "./pages";
 import useAuth from "./hooks/useAuth";
 
 const App: React.FC = () => {
@@ -17,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/posts" element={<Posts />} />
           <Route path="/posts/:postId" element={<PostItem />} />
           <Route path="/user" element={<User />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </Layout>
     </Router>

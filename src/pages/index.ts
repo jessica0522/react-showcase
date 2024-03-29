@@ -6,5 +6,6 @@ import Posts from "./Posts";
 import PostItem from "./PostItem";
 import Nav from "./Nav";
 import User from "./User";
+import Page404 from "./Page404";
 
-export { Layout, Home, Login, Register, Posts, PostItem, Nav, User };
+export { Layout, Home, Login, Register, Posts, PostItem, Nav, User, Page404 };

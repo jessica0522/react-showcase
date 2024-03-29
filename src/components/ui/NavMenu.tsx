@@ -15,14 +15,15 @@ const NavMenu = ({ menuItems, isMobile, onClick }: NavMenuProps) => {
   return (
     <>
       {menuItems.map((item: MenuItem) => (
-        <NavigationLink
-          key={item.name}
-          to={item.to}
-          className={isMobile ? mobileClassName : ""}
-          onClick={isMobile ? onClick : undefined}
-        >
-          {item.name}
-        </NavigationLink>
+        <div key={item.name}>
+          <NavigationLink
+            to={item.to}
+            className={isMobile ? mobileClassName : ""}
+            onClick={isMobile ? onClick : undefined}
+          >
+            {item.name}
+          </NavigationLink>
+        </div>
       ))}
     </>
   );
