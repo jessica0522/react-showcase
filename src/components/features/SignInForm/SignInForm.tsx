@@ -13,6 +13,7 @@ const SignInForm = () => {
           label="Email"
           type="text"
           value={email}
+          required
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
           }
@@ -21,6 +22,7 @@ const SignInForm = () => {
           label="Password"
           type="text"
           value={password}
+          required
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setPassword(e.target.value)
           }

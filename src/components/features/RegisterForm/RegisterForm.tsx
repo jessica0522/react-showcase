@@ -21,6 +21,7 @@ const RegisterForm = () => {
           label="Email"
           type="text"
           value={email}
+          required
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
           }
@@ -29,6 +30,7 @@ const RegisterForm = () => {
           label="Password"
           type="text"
           value={password}
+          required
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setPassword(e.target.value)
           }
@@ -37,6 +39,7 @@ const RegisterForm = () => {
           label="Confirm Password"
           type="text"
           value={confirmedPassword}
+          required
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setConfirmedPassword(e.target.value)
           }
