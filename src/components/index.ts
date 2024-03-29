@@ -2,6 +2,7 @@ import SignInForm from "./features/SignInForm/SignInForm";
 import RegisterForm from "./features/RegisterForm/RegisterForm";
 import PostLists from "./features/PostLists/PostLists";
 import PostDisplay from "./features/PostDisplay/PostDisplay";
+import NewPostForm from "./features/NewPostForm/NewPostForm";
 
 import HamburgerButton from "./ui/HamburgerButton";
 import CloseButton from "./ui/CloseButton";
@@ -11,7 +12,10 @@ import NavigationLink from "./ui/NavigationLink";
 import NavMobile from "./ui/NavMobile";
 import NavMenu from "./ui/NavMenu";
 import TextInput from "./ui/TextInput";
+import TextareaInput from "./ui/TextareaInput";
+import SelectInput from "./ui/SelectInput";
 import FullPageLoading from "./ui/FullPageLoading";
+import NotificationDialog from "./ui/NotificationDialog";
 
 export {
   SignInForm,
@@ -24,7 +28,11 @@ export {
   NavMobile,
   NavMenu,
   TextInput,
+  TextareaInput,
+  SelectInput,
   FullPageLoading,
   PostLists,
   PostDisplay,
+  NewPostForm,
+  NotificationDialog,
 };

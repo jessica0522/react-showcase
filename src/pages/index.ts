@@ -7,5 +7,17 @@ import PostItem from "./PostItem";
 import Nav from "./Nav";
 import User from "./User";
 import Page404 from "./Page404";
+import AddNewPost from "./AddNewPost";
 
-export { Layout, Home, Login, Register, Posts, PostItem, Nav, User, Page404 };
+export {
+  Layout,
+  Home,
+  Login,
+  Register,
+  Posts,
+  PostItem,
+  Nav,
+  User,
+  Page404,
+  AddNewPost,
+};

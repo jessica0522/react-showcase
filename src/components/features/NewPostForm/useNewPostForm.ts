@@ -29,6 +29,13 @@ const useNewPostForm = () => {
   ];
 
   useEffect(() => {
+    // if user is not signned it, redirect to posts page
+    if (!user.email) {
+      navigate("/posts");
+    }
+  }, [navigate, user]);
+
+  useEffect(() => {
     // Sort textarea content to string array before sending to API
     const spittedContent = content.split("\n");
     setContentArr(spittedContent);

@@ -9,6 +9,7 @@ import {
   User,
   PostItem,
   Page404,
+  AddNewPost,
 } from "./pages";
 import useAuth from "./hooks/useAuth";
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/posts/:postId" element={<PostItem />} />
+          <Route path="/posts/add-new" element={<AddNewPost />} />
           <Route path="/user" element={<User />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
