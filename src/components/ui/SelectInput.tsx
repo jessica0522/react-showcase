@@ -25,10 +25,11 @@ const SelectInput = ({
           onChange={(e) => onChange(e)}
           className="block w-full rounded-md border-0 mt-2 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
         >
+          <option value="" disabled>
+            Please select
+          </option>
           {options.map((o) => (
-            <option className="capitalize" key={o}>
-              {o}
-            </option>
+            <option key={o}>{o}</option>
           ))}
         </select>
       </label>

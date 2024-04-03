@@ -42,7 +42,7 @@ const useNewPostForm = () => {
   }, [content]);
 
   const handleSubmitNewPost = async () => {
-    if (title === "" || content === "") {
+    if (title === "" || content === "" || category === ("" as Category)) {
       setErrorMessage("Please enter all required fields!");
     } else {
       await postToApi();
