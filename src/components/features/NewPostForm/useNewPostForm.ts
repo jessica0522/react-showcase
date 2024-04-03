@@ -63,7 +63,8 @@ const useNewPostForm = () => {
 
     try {
       dispatch(setLoading(true));
-      const response = await axios.post("/api/posts/add", data);
+      const headers = user.token ? { authtoken: user.token } : {};
+      const response = await axios.post("/api/posts/add", data, { headers });
       if (response.data && response.data.id) {
         setAddResult(true);
       }
