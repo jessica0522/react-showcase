@@ -10,6 +10,7 @@ import {
   PostItem,
   Page404,
   AddNewPost,
+  Database,
 } from "./pages";
 import useAuth from "./hooks/useAuth";
 
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Route path="/posts/:postId" element={<PostItem />} />
           <Route path="/posts/add-new" element={<AddNewPost />} />
           <Route path="/user" element={<User />} />
+          <Route path="/database" element={<Database />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </Layout>

@@ -17,6 +17,7 @@ import TextareaInput from "./ui/TextareaInput";
 import SelectInput from "./ui/SelectInput";
 import FullPageLoading from "./ui/FullPageLoading";
 import NotificationDialog from "./ui/NotificationDialog";
+import Table from "./features/Table/Table";
 
 export {
   SignInForm,
@@ -37,4 +38,5 @@ export {
   NewPostForm,
   NotificationDialog,
   ThumbUp,
+  Table,
 };

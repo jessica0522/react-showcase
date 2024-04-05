@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import User from "./User";
 import Page404 from "./Page404";
 import AddNewPost from "./AddNewPost";
+import Database from "./Database";
 
 export {
   Layout,
@@ -20,4 +21,5 @@ export {
   User,
   Page404,
   AddNewPost,
+  Database,
 };

@@ -5,7 +5,7 @@ interface MenuItem {
 const menus: MenuItem[] = [
   { name: "Home", to: "/" },
   { name: "Posts", to: "/posts" },
-  { name: "Database", to: "/" },
+  { name: "Database", to: "/database" },
 ];
 
 export { MenuItem, menus };
