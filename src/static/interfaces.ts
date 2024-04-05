@@ -26,4 +26,5 @@ export interface Post {
   datetime: string;
   category: Category;
   author: PostAuthor;
+  likes: string[];
 }

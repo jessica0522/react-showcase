@@ -1,6 +1,6 @@
 import React from "react";
 import usePostDisplay from "./usePostDisplay";
-import { UserAvatar } from "../../../components";
+import { ThumbUp, UserAvatar } from "../../../components";
 
 interface PostDisplayProps {
   postId: string;
@@ -17,13 +17,15 @@ const PostDisplay = ({ postId }: PostDisplayProps) => {
           <div>
             <img src={`/tags/${post.category}.jpeg`} alt="" />
           </div>
-          <div className="flex items-center gap-x-4 text-xs mt-6">
+          <div className="flex items-center gap-x-8 text-xs mt-6">
             <time dateTime={post.datetime} className="text-gray-500">
-              {new Date(post.datetime).toLocaleString()}
+              {post.datetime}
             </time>
             <p className="relative z-10 rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 capitalize">
               {post.category}
             </p>
+
+            <ThumbUp post={post} />
           </div>
           <div className="group relative">
             <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">

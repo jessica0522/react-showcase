@@ -3,6 +3,7 @@ import RegisterForm from "./features/RegisterForm/RegisterForm";
 import PostLists from "./features/PostLists/PostLists";
 import PostDisplay from "./features/PostDisplay/PostDisplay";
 import NewPostForm from "./features/NewPostForm/NewPostForm";
+import ThumbUp from "./features/ThumbUp/ThumbUp";
 
 import HamburgerButton from "./ui/HamburgerButton";
 import CloseButton from "./ui/CloseButton";
@@ -35,4 +36,5 @@ export {
   PostDisplay,
   NewPostForm,
   NotificationDialog,
+  ThumbUp,
 };

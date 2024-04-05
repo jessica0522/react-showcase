@@ -17,7 +17,7 @@ function PostLists() {
               </div>
               <div className="flex items-center gap-x-4 text-xs mt-6">
                 <time dateTime={post.datetime} className="text-gray-500">
-                  {new Date(post.datetime).toLocaleString()}
+                  {post.datetime}
                 </time>
                 <p className="relative z-10 rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 capitalize">
                   {post.category}
