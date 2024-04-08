@@ -1,15 +1,18 @@
 import React from "react";
-import { Post } from "../../../static/interfaces";
 import NavigationLink from "../../ui/NavigationLink";
 import useTable from "./useTable";
-import StandardButton from "../../ui/StandardButton";
+import { NotificationDialog, StandardButton } from "../../../components";
 
-interface TableProps {
-  posts: Post[];
-}
-
-const Table = ({ posts }: TableProps) => {
-  const { ableToDelete, tableClasses } = useTable();
+const Table = () => {
+  const {
+    posts,
+    ableToDelete,
+    tableClasses,
+    beforeDelete,
+    setDeleteDialogOpen,
+    deleteDialogOpen,
+    deletePost,
+  } = useTable();
 
   return (
     <div className="overflow-x-auto">
@@ -44,7 +47,7 @@ const Table = ({ posts }: TableProps) => {
               <td className={tableClasses.cell}>
                 {ableToDelete(post.author.email) ? (
                   <StandardButton
-                    onClick={() => console.log("delete")}
+                    onClick={() => beforeDelete(post.id)}
                     additionalClass="py-1.5"
                   >
                     Delete
@@ -59,6 +62,26 @@ const Table = ({ posts }: TableProps) => {
           ))}
         </tbody>
       </table>
+      <NotificationDialog
+        open={deleteDialogOpen}
+        title="Attention: Post Deletion Confirmation!"
+        onClose={() => setDeleteDialogOpen(false)}
+      >
+        <>
+          <p className="text-sm text-gray-500 mb-4">
+            Please note that once you delete this post, it cannot be restored.
+          </p>
+          <StandardButton onClick={() => setDeleteDialogOpen(false)}>
+            Cancel
+          </StandardButton>
+          <StandardButton
+            onClick={deletePost}
+            additionalClass="bg-red-500 ml-8"
+          >
+            Delete
+          </StandardButton>
+        </>
+      </NotificationDialog>
     </div>
   );
 };
