@@ -31,14 +31,24 @@ describe("useNewPostForm hook", () => {
       email: "test@example.com",
       token: "testToken",
     };
+    const createResponse = {
+      id: "postId",
+    };
     const mockedNavigate = jest.fn();
     const mockedDispatch = jest.fn();
-    const mockedCreateNewPost = jest.fn();
 
-    useSelector.mockReturnValue(user);
-    useDispatch.mockReturnValue(mockedDispatch);
-    useNavigate.mockReturnValue(mockedNavigate);
-    createNewPost.mockReturnValueOnce({ id: "postId" });
+    (useSelector as jest.MockedFunction<typeof useSelector>).mockImplementation(
+      () => user,
+    );
+    (useDispatch as jest.MockedFunction<typeof useDispatch>).mockImplementation(
+      () => mockedDispatch,
+    );
+    (useNavigate as jest.MockedFunction<typeof useNavigate>).mockImplementation(
+      () => mockedNavigate,
+    );
+    (
+      createNewPost as jest.MockedFunction<typeof createNewPost>
+    ).mockResolvedValue(createResponse);
 
     const { result } = renderHook(() => useNewPostForm());
 

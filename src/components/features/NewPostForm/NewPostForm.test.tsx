@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import NewPostForm from "./NewPostForm";
+import { StandardButtonProps } from "../../ui/StandardButton";
 
 jest.mock("../..", () => ({
   NotificationDialog: () => <div>NotificationDialog</div>,
