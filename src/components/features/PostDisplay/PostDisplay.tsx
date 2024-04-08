@@ -8,7 +8,6 @@ interface PostDisplayProps {
 
 const PostDisplay = ({ postId }: PostDisplayProps) => {
   const { post } = usePostDisplay(postId);
-  console.log("post", post);
 
   return (
     <div className="grid min-h-full place-items-center bg-white px-6 py-8 sm:py-8 lg:px-8">

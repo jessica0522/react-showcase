@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectUser } from "../../../state/selectors";
 import { setLoading } from "../../../state/mainState/mainSlice";
-import axios from "axios";
+import { getPosts } from "../../../apiRequests";
 
 const usePostList = () => {
   const dispatch = useDispatch();
@@ -15,12 +15,12 @@ const usePostList = () => {
     const fetchPosts = async () => {
       try {
         dispatch(setLoading(true));
-        const response = await axios.get("/api/posts");
+        const response = await getPosts();
 
-        setPosts(response.data);
+        setPosts(response);
       } catch (error) {
         console.log("error", error);
-        throw new Error("Cannot find any posts");
+        throw error;
       } finally {
         dispatch(setLoading(false));
       }

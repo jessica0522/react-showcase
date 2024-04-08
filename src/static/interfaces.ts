@@ -19,12 +19,15 @@ export interface PostAuthor {
   role?: string;
 }
 
-export interface Post {
-  id: string;
+export interface NewPostRequest {
   title: string;
   content: string[];
   datetime: string;
   category: Category;
   author: PostAuthor;
+}
+
+export interface Post extends NewPostRequest {
+  id: string;
   likes: string[];
 }

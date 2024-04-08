@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { setLoading } from "../../../state/mainState/mainSlice";
 import { selectUser } from "../../../state/selectors";
-import { Category } from "./../../../static/interfaces";
+import { Category, NewPostRequest } from "./../../../static/interfaces";
+import { createNewPost } from "../../../apiRequests";
 
 const useNewPostForm = () => {
   const navigate = useNavigate();
@@ -50,28 +50,30 @@ const useNewPostForm = () => {
   };
 
   const postToApi = async () => {
-    const data = {
-      title,
-      content: contentArr,
-      datetime: new Date().toISOString(),
-      category,
-      author: {
-        email: user.email,
-        role: role,
-      },
-    };
-
-    try {
-      dispatch(setLoading(true));
-      const headers = user.token ? { authtoken: user.token } : {};
-      const response = await axios.post("/api/posts/add", data, { headers });
-      if (response.data && response.data.id) {
-        setAddResult(true);
+    if (user.email) {
+      const data: NewPostRequest = {
+        title,
+        content: contentArr,
+        datetime: new Date().toISOString(),
+        category,
+        author: {
+          email: user.email,
+          role: role,
+        },
+      };
+      try {
+        dispatch(setLoading(true));
+        if (user && user.token) {
+          const response = await createNewPost(user.token, data);
+          if (response && response.id) {
+            setAddResult(true);
+          }
+        }
+      } catch (error) {
+        setErrorMessage("Failed to add your post, please try again later.");
+      } finally {
+        dispatch(setLoading(false));
       }
-    } catch (error) {
-      setErrorMessage("Failed to add your post, please try again later.");
-    } finally {
-      dispatch(setLoading(false));
     }
   };
 
