@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationLink, UserAvatar } from "../../index";
+import { NavigationLink, ScrollReveal, UserAvatar } from "../../index";
 import { Post } from "../../../static/interfaces";
 import usePostList from "./usePostList";
 
@@ -9,7 +9,7 @@ function PostLists() {
   return (
     <>
       {posts.map((post: Post) => (
-        <div key={post.id}>
+        <ScrollReveal key={post.id}>
           <NavigationLink to={`/posts/${post.id}`}>
             <article className="flex max-w-xl flex-col items-start justify-between">
               <div>
@@ -45,7 +45,7 @@ function PostLists() {
               </div>
             </article>
           </NavigationLink>
-        </div>
+        </ScrollReveal>
       ))}
     </>
   );

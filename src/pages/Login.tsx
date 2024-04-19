@@ -11,7 +11,7 @@ const Login = () => {
   useEffect(() => {
     // navigate to home page when user already signed in
     if (user.email) {
-      navigate("/");
+      navigate("/user");
     }
   }, [user, navigate]);
 
@@ -20,7 +20,12 @@ const Login = () => {
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
         Log in to your account
       </h2>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
+        <p className="text-gray-500 text-sm mb-8">
+          For exploring this app, you can use the following testing account:
+          test@example.com with the password 'test2024'.
+        </p>
         <SignInForm />
         <p>
           Don't have an account?{" "}

@@ -20,7 +20,11 @@ const Register = () => {
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
         Create your account
       </h2>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-sm">
+        <p className="text-gray-500 text-sm mb-8">
+          You can create an account using a fake email address, and there's no
+          need for email verification.
+        </p>
         <RegisterForm />
         <p>
           Already have an account?{" "}
