@@ -30,7 +30,10 @@
       "react-app",
       "react-app/jest",
       "eslint:recommended"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": {
     "production": [
