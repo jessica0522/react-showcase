@@ -4,6 +4,7 @@ import PostLists from "./features/PostLists/PostLists";
 import PostDisplay from "./features/PostDisplay/PostDisplay";
 import NewPostForm from "./features/NewPostForm/NewPostForm";
 import ThumbUp from "./features/ThumbUp/ThumbUp";
+import ScrollReveal from "./features/ScrollReveal/ScrollReveal";
 
 import HamburgerButton from "./ui/HamburgerButton";
 import CloseButton from "./ui/CloseButton";
@@ -38,5 +39,6 @@ export {
   NewPostForm,
   NotificationDialog,
   ThumbUp,
+  ScrollReveal,
   Table,
 };
