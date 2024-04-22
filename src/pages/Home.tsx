@@ -4,7 +4,7 @@ import { features } from "../static/features";
 
 function Home() {
   return (
-    <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div className="relative isolate overflow-hidden bg-white py-16 lg:py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
 
@@ -12,7 +12,7 @@ function Home() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <ScrollReveal>
             <p className="mt-2 text-3xl font-bold tracking-tight text-indigo-500 sm:text-4xl">
-              This is a basic React-based Blog App
+              This is a React-based Blog App
             </p>
             <p className="tracking-tight text-slate-too">
               You can find both of the front-end and back-end source code on
@@ -24,7 +24,7 @@ function Home() {
               target="_blank"
               className="text-blue-500 cursor-pointer underline"
             >
-              Front-end repo
+              Front-end
             </a>
             &nbsp;&nbsp;
             <a
@@ -33,7 +33,7 @@ function Home() {
               target="_blank"
               className="text-blue-500 cursor-pointer underline"
             >
-              Back-end repo
+              Back-end
             </a>
           </ScrollReveal>
           <ScrollReveal>
@@ -43,7 +43,7 @@ function Home() {
             </p>
           </ScrollReveal>
         </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-8">
+        <div className="mx-auto max-w-7xl lg:px-8 mt-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               <ScrollReveal>
@@ -132,9 +132,9 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <div className="mx-auto mt-16 max-w-2xl  sm:mt-20 lg:mt-24 lg:max-w-4xl">
           <ScrollReveal>
-            <p className="mt-12 mb-8 text-2xl text-center leading-8 text-gray-900">
+            <p className="mt-12 mb-8 text-2xl lg:text-center leading-8 text-gray-900">
               These modern web development stacks have been used in this app:
             </p>
           </ScrollReveal>

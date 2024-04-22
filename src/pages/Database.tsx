@@ -3,8 +3,8 @@ import { Table } from "../components";
 
 const Database = () => {
   return (
-    <div className="container mx-auto">
-      <div className="py-12">
+    <div className="container mx-auto px-6 lg:px-8">
+      <div className="py-16 lg:py-24">
         <h1 className="text-3xl font-semibold leading-7 text-indigo-500">
           Database
         </h1>
